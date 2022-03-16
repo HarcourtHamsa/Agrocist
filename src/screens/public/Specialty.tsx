@@ -19,12 +19,17 @@ import {IOptions} from 'interface/IGeneral'
 import CustomButton from 'components/CustomButton'
 import {loadingAndErrorDefault} from 'utils/data/defaults'
 import FullScreenLoader from 'components/FullScreenLoader'
-import {startLoader} from '../../utils/display'
+import {catchHelper, startLoader, stopLoader} from 'utils/display'
 import {IResponse} from 'interface/Request'
 import networkRequest from 'utils/api/networkRequest'
 import {SPECIALTY} from 'utils/api/constant'
+import {initiateLogin, updateUserData} from 'services/Login'
+import {Dispatch} from 'redux'
+import {useDispatch} from 'react-redux'
 
 const Specialty = ({navigation}: IComponent) => {
+  const dispatch: Dispatch<any> = useDispatch()
+
   const [selected, setSelected] = useState<IOptions>({} as IOptions)
   const [loadingAndError, setLoadingAndError] = useState(loadingAndErrorDefault)
 
@@ -34,12 +39,18 @@ const Specialty = ({navigation}: IComponent) => {
       startLoader(setLoadingAndError)
       const model = {specialty: value.text}
       const request: IResponse = await networkRequest.post(SPECIALTY, model)
-      console.log({request})
       if (request.success) {
-        // login user
-        return
+        const updateUser: boolean = await updateUserData(dispatch)
+        if (updateUser) {
+          stopLoader(setLoadingAndError)
+          await initiateLogin(dispatch)
+          return
+        }
       }
-    } catch (error) {}
+      catchHelper(setLoadingAndError, request, `Specialty submission failed`)
+    } catch (error) {
+      catchHelper(setLoadingAndError, error, `Network Error`)
+    }
   }
 
   return (

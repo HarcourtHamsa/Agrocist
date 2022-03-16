@@ -7,23 +7,20 @@ import {ScrollView, StyleSheet, View} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {useDispatch, useSelector} from 'react-redux'
 import {Dispatch} from 'redux'
-import {USER_LOGOUT} from 'store/constant'
+import {logoutUser} from 'services/Login'
 import {background} from 'styles/background'
 import {APP_GREEN, APP_WHITE} from 'styles/constant'
 import {flex} from 'styles/layout'
 import {width} from 'styles/spacing'
-import {font} from 'styles/typography'
+import {font, font_size} from 'styles/typography'
 import {profileOptions} from 'utils/data'
 
-const Settings = ({navigation}: IComponent) => {
+const Community = ({navigation}: IComponent) => {
   const user = useSelector((state: any) => state.user.userDetail)
   const dispatch: Dispatch<any> = useDispatch()
 
   const handleLogout = () => {
-    dispatch({
-      type: USER_LOGOUT,
-      payload: null,
-    })
+    logoutUser(dispatch)
   }
 
   return (
@@ -58,7 +55,7 @@ const Settings = ({navigation}: IComponent) => {
             <CustomButton
               onPress={handleLogout}
               title={'Logout'}
-              textStyle={[styles.textButtonText, font.medium]}
+              textStyle={[styles.textButtonText, font.regular, font_size[15]]}
               containerStyle={[styles.textButton, width.full]}
             />
           </View>
@@ -68,7 +65,7 @@ const Settings = ({navigation}: IComponent) => {
   )
 }
 
-export default Settings
+export default Community
 
 const styles = StyleSheet.create({
   textButton: {

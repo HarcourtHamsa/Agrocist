@@ -3,12 +3,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import * as Routes from './constant'
 import HomeScreen from 'screens/authenticated/tabs/Home/HomeScreen'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import Settings from 'screens/authenticated/tabs/Settings/Settings'
 import TabBar from './TabBar'
 import UserProfile from 'screens/authenticated/Profile/UserProfile'
 import {requestNotificationUserPermission} from 'services/Notification'
 import {Dispatch} from 'redux'
 import {useDispatch} from 'react-redux'
+import Community from 'screens/authenticated/tabs/Commnity/Community'
+import Diagnosis from 'screens/authenticated/tabs/Diagnosis/Diagnosis'
 
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator()
@@ -20,14 +21,13 @@ const TabNavigator = () => {
       initialRouteName={Routes.HOME_SCREEN}
       tabBar={props => <TabBar {...props} />}>
       <Tab.Screen name={Routes.HOME_SCREEN} component={HomeScreen} />
-      <Tab.Screen name={Routes.SETTING_SCREEN} component={Settings} />
+      <Tab.Screen name={Routes.DIAGNOSIS_SCREEN} component={Diagnosis} />
+      <Tab.Screen name={Routes.COMMUNITY_SCREEN} component={Community} />
     </Tab.Navigator>
   )
 }
 
 const AuthenticatedRoutes = () => {
-  const dispatch: Dispatch<any> = useDispatch()
-
   useEffect(() => {
     requestNotificationUserPermission()
   }, [])

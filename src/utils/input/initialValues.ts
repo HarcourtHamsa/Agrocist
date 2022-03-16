@@ -4,6 +4,10 @@ export const createAccountValues = {
   password: '',
   confirm_password: '',
 };
+export const loginValue = {
+  phoneNumber: '',
+  password: '',
+};
 
 export const mobileValues = {
   phonenumber: '',

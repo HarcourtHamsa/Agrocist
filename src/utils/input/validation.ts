@@ -22,3 +22,14 @@ export const mobile_validation = Yup.object().shape({
     .required('Phone Number is required')
     .label('Phone Number'),
 });
+export const login_validation = Yup.object().shape({
+  phoneNumber: Yup.string()
+    .length(11, 'Phone Number must be 11 characters')
+    .required('Phone Number is required')
+    .label('Phone Number'),
+  password: Yup.string()
+    .min(4, ({min}) => `Password must be ${min} digits`)
+    .max(4, ({max}) => `Password must be ${max} digits`)
+    .required('Password is required')
+    .label('Password'),
+});

@@ -56,6 +56,7 @@ export const margin = StyleSheet.create({
   y_30: {marginVertical: 30},
 
   // horizontal
+  x_0: {marginHorizontal: 0},
   x_5: {marginHorizontal: 5},
   x_10: {marginHorizontal: 10},
   x_20: {marginHorizontal: 20},

@@ -1,6 +1,7 @@
 export interface IUser {
-  user_id: string;
-  email: string;
-  emailVerified: boolean;
-  phoneNumber: string;
+  id: number;
+  first_name: string;
+  phonenumber: string;
+  farm_name: string;
+  specialty: string | null;
 }

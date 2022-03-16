@@ -1,4 +1,6 @@
 import axios, {AxiosResponse, AxiosError} from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {TOKEN} from 'utils/data/constant';
 
 const instance = axios.create({
   baseURL: 'https://agrocist-api-dev.herokuapp.com/api/v1/',
@@ -15,12 +17,10 @@ const instance = axios.create({
 instance.interceptors.request.use(
   async function (config) {
     // Do something before request is sent
-    const token = '';
-
-    if (token !== undefined) {
+    const token: string | null = await AsyncStorage.getItem(TOKEN);
+    if (typeof token === 'string') {
       // We have data!!
-      console.log({token});
-      config.headers!.Authorization = token;
+      config.headers!.Authorization = `Bearer ${token}`;
     }
     return config;
   },

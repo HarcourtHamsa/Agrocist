@@ -41,9 +41,11 @@ const MobileRegistration = ({navigation, route}: IComponent) => {
       if (request.success) {
         const authRequest: boolean = await initiateAuthorization(
           mobileNumber,
-          model.pin,
+          model.password,
           setLoadingAndError,
           dispatch,
+          navigation,
+          false,
         )
         if (authRequest) {
           stopLoader(setLoadingAndError)
@@ -68,6 +70,7 @@ const MobileRegistration = ({navigation, route}: IComponent) => {
           containerStyle={padding.t_5}
           placeholder={``}
           value={mobileNumber}
+          touched={true}
           error={loadingAndError.error}
           autoCapitalize='none'
           keyboardType='phone-pad'

@@ -16,7 +16,14 @@ const Success = ({navigation, route}: IComponent) => {
   console.log({from})
   const handlePress = () => {
     try {
-    } catch (error) {}
+      if (from === 'registration') {
+        return navigation.navigate(SPECIALTY_SCREEN)
+      } else {
+        // for reset pin users
+      }
+    } catch (error) {
+      console.log({error})
+    }
   }
   return (
     <SafeAreaView style={[flex.flex_1, background.white]}>

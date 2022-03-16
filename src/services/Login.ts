@@ -10,6 +10,9 @@ import {
   USER_LOGOUT,
 } from 'store/constant';
 import {Dispatch} from 'redux';
+import {INavigation} from 'interface/IComponent';
+import {SPECIALTY_SCREEN} from 'navigation/constant';
+import {IUser} from 'interface/IUser';
 
 type loadingStateSetter = React.Dispatch<
   React.SetStateAction<{
@@ -37,6 +40,8 @@ export const initiateAuthorization = async (
   pin: string,
   setLoadingAndError: loadingStateSetter,
   dispatch: Dispatch<any>,
+  navigation: INavigation,
+  checkForSpecialty?: boolean,
 ): Promise<boolean> => {
   try {
     const model = {phonenumber: mobileNumber, password: pin};
@@ -48,6 +53,10 @@ export const initiateAuthorization = async (
         type: UPDATE_USER_DATA,
         payload: request.user,
       });
+      if (checkForSpecialty === true && request.user?.specialty === null) {
+        navigation.navigate(SPECIALTY_SCREEN);
+        return false;
+      }
       return true;
     }
     catchHelper(setLoadingAndError, request, `Login Failed`);
@@ -62,20 +71,21 @@ export const updateUserData = async (
   dispatch: Dispatch<any>,
 ): Promise<boolean> => {
   try {
-    const request: IResponse = await networkRequest.get(PROFILE);
-    console.log({request});
-    // await dispatch({
-    //   type: UPDATE_USER_DATA,
-    //   payload: request,
-    // });
+    const request: IUser = await networkRequest.get(PROFILE);
+    await dispatch({
+      type: UPDATE_USER_DATA,
+      payload: request,
+    });
     return true;
   } catch (error) {
+    console.log({error}, 'updateUserData');
     return false;
   }
 };
 export const logoutUser = async (dispatch: Dispatch<any>): Promise<boolean> => {
   try {
-    await networkRequest.post(LOG_OUT, {});
+    networkRequest.post(LOG_OUT, {});
+    await AsyncStorage.removeItem(TOKEN);
     await dispatch({
       type: USER_LOGOUT,
       payload: null,
