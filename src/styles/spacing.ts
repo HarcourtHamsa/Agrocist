@@ -101,6 +101,7 @@ export const width = StyleSheet.create({
   90: {width: normalizeDimension(90)},
   170: {width: normalizeDimension(170)},
   215: {width: normalizeDimension(215)},
+  230: {width: normalizeDimension(230)},
   280: {width: normalizeDimension(280)},
 });
 export const height = StyleSheet.create({

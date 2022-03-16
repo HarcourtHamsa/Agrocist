@@ -9,14 +9,16 @@ import Success from 'screens/public/Success'
 import ResetPIN from 'screens/public/ResetPIN'
 import CreatePIN from 'screens/public/CreatePIN'
 import Specialty from 'screens/public/Specialty'
+import AppIntro from 'screens/public/AppIntro'
 
 const Stack = createNativeStackNavigator()
 
 const PublicRoutes = () => {
   return (
     <Stack.Navigator
-      initialRouteName={Routes.LOGIN_SCREEN}
+      initialRouteName={Routes.INTRO_SCREEN}
       screenOptions={{headerShown: false}}>
+      <Stack.Screen name={Routes.INTRO_SCREEN} component={AppIntro} />
       <Stack.Screen name={Routes.LOGIN_SCREEN} component={LoginScreen} />
       <Stack.Screen
         name={Routes.CREATE_ACCOUNT_SCREEN}

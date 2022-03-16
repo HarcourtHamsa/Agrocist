@@ -6,10 +6,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import TabBar from './TabBar'
 import UserProfile from 'screens/authenticated/Profile/UserProfile'
 import {requestNotificationUserPermission} from 'services/Notification'
-import {Dispatch} from 'redux'
-import {useDispatch} from 'react-redux'
-import Community from 'screens/authenticated/tabs/Commnity/Community'
 import Diagnosis from 'screens/authenticated/tabs/Diagnosis/Diagnosis'
+import Community from 'screens/authenticated/tabs/Community/Community'
 
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator()

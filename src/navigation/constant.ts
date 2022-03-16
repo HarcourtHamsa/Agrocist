@@ -8,6 +8,7 @@ export const SUCCESS_SCREEN = 'Success';
 export const RESET_PIN_SCREEN = 'ResetPIN';
 export const CREATE_PIN_SCREEN = 'CreatePIN';
 export const SPECIALTY_SCREEN = 'Specialty';
+export const INTRO_SCREEN = 'Intro';
 
 // Authenticated Route
 export const TAB = 'Tab';

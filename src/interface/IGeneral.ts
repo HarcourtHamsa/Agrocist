@@ -9,3 +9,12 @@ export interface IOptions {
   text: string;
   image: ImageSourcePropType;
 }
+
+export interface IIntroItem {
+  id: number;
+  title: string;
+  text: string;
+  image: ImageSourcePropType;
+  height: number;
+  width: number;
+}
