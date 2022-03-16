@@ -8,6 +8,8 @@ import UserProfile from 'screens/authenticated/Profile/UserProfile'
 import {requestNotificationUserPermission} from 'services/Notification'
 import Diagnosis from 'screens/authenticated/tabs/Diagnosis/Diagnosis'
 import Community from 'screens/authenticated/tabs/Community/Community'
+import DeliverySearch from 'screens/authenticated/tabs/Home/Store/DeliverySearch'
+import FindDelivery from 'screens/authenticated/tabs/Home/Store/FindDelivery'
 
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator()
@@ -35,6 +37,14 @@ const AuthenticatedRoutes = () => {
       initialRouteName={Routes.TAB}
       screenOptions={{headerShown: false}}>
       <Stack.Screen name={Routes.TAB} component={TabNavigator} />
+      <Stack.Screen
+        name={Routes.DELIVERY_SEARCH_SCREEN}
+        component={DeliverySearch}
+      />
+      <Stack.Screen
+        name={Routes.FIND_DELIVERY_SCREEN}
+        component={FindDelivery}
+      />
       <Stack.Screen name={Routes.USER_PROFILE_SCREEN} component={UserProfile} />
     </Stack.Navigator>
   )

@@ -7,6 +7,9 @@ export const background = StyleSheet.create({
   gray: {backgroundColor: `#F1F1F1`},
   green: {backgroundColor: `#05612E`},
   intro_gray: {backgroundColor: APP_DISABLE_GRAY},
+  light_green: {backgroundColor: `#ECF5F0`},
+  faint_green: {backgroundColor: `#D7F1E3`},
+  yellow: {backgroundColor: `#FDD394`},
 });
 export const opacity = StyleSheet.create({
   faint: {opacity: 0.1},

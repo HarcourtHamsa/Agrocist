@@ -53,3 +53,33 @@ export const intro: IIntroItem[] = [
     height: normalizeDimension(239, 'height'),
   },
 ];
+
+export const diagnosisPictureOption = [
+  {
+    id: 1,
+    title: `Take Photo`,
+    image: ImageAssets.take_photo,
+  },
+  {
+    id: 2,
+    title: `Upload Photo`,
+    image: ImageAssets.upload_photo,
+  },
+];
+
+export const clickableCardOptions = [
+  {
+    id: 1,
+    title: `Identify and Diagnose your crop`,
+    text: `Take a picture of your plants and see diagnosis`,
+    image: ImageAssets.camera,
+    isGreen: true,
+  },
+  {
+    id: 2,
+    title: `Ask Experts`,
+    text: `One-on-one consultation with experts. Get precise solutions to your crop problems.`,
+    image: ImageAssets.ask,
+    isGreen: false,
+  },
+];

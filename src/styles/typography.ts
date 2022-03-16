@@ -10,11 +10,11 @@ export const font = StyleSheet.create({
 });
 
 export const color = StyleSheet.create({
-  text_gray: {color: '#8F9BB3'},
+  text_gray: {color: '#A0A0A0'},
   text_green: {color: '#05612E'},
   text_white: {color: '#FFFFFF'},
   text_black: {color: '#555555'},
-  text_black_purple: {color: '#222B45'},
+  text_black_purple: {color: '#171717'},
   text_red: {color: '#EA0015'},
 });
 export const font_size = StyleSheet.create({

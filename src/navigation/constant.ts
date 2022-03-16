@@ -16,3 +16,5 @@ export const HOME_SCREEN = 'Home';
 export const COMMUNITY_SCREEN = 'Community';
 export const DIAGNOSIS_SCREEN = 'Diagnosis';
 export const USER_PROFILE_SCREEN = 'UserProfile';
+export const DELIVERY_SEARCH_SCREEN = 'DeliverySearch';
+export const FIND_DELIVERY_SCREEN = 'FindDelivery';

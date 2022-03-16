@@ -67,7 +67,7 @@ const Appbar = ({
             />
           </TouchableOpacity>
         )}
-        {title && (
+        {
           <View
             style={[
               styles.textContainer,
@@ -76,7 +76,7 @@ const Appbar = ({
               },
             ]}>
             <CustomText
-              text={title}
+              text={title ?? ''}
               type='title'
               otherStyles={[
                 styles.text,
@@ -86,7 +86,7 @@ const Appbar = ({
               ]}
             />
           </View>
-        )}
+        }
         {trailingText && handleTrailingAction && (
           <TouchableOpacity style={styles.pr_20} onPress={handleTrailingAction}>
             <CustomText text={trailingText} otherStyles={styles.trailingText} />
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   inLineContainer: {
     flexDirection: 'row',
-    backgroundColor: APP_WHITE,
+    backgroundColor: 'transparent',
     marginTop: 0,
     paddingBottom: 15,
     height: 60,

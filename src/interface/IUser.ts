@@ -1,7 +1,7 @@
 export interface IUser {
   id: number;
-  first_name: string;
+  business_individual_name: string;
   phonenumber: string;
-  farm_name: string;
+  email: string;
   specialty: string | null;
 }

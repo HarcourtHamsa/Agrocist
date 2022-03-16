@@ -22,9 +22,10 @@ export const border = StyleSheet.create({
   radius_4: {borderRadius: 4},
   radius_6: {borderRadius: 6},
   radius_8: {borderRadius: 8},
+  radius_10: {borderRadius: 10},
   radius_12: {borderRadius: 12},
-  radius_20: {borderRadius: 20},
-  radius_23: {borderRadius: 23},
+  radius_17: {borderRadius: 17},
+  radius_21: {borderRadius: 21},
   radius_25: {borderRadius: 25},
   width_half: {borderWidth: 0.5},
   width_1: {borderWidth: 1},
@@ -47,4 +48,7 @@ export const elevation = StyleSheet.create({
 });
 export const image = StyleSheet.create({
   aspect_1: {aspectRatio: 1},
+});
+export const overflow = StyleSheet.create({
+ hidden: {overflow: 'hidden'}
 });
