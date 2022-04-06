@@ -88,6 +88,7 @@ const LoginScreen = ({navigation}: IComponent) => {
                       containerStyle={margin.b_10}
                       placeholder='PIN'
                       icon='pin'
+                      maxLength={4}
                       autoCapitalize='none'
                       secureTextEntry={true}
                       onChangeText={handleChange('password')}

@@ -48,7 +48,7 @@ const TopSection = ({navigation}: ITopSection) => {
           otherStyles={[color.text_green, font_size[24], font.bold]}
         />
         <Image
-          resizeMode={'center'}
+          resizeMode={'cover'}
           source={ImageAssets.user}
           style={[
             width[38],

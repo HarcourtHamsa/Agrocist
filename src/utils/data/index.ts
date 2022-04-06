@@ -57,11 +57,13 @@ export const intro: IIntroItem[] = [
 export const diagnosisPictureOption = [
   {
     id: 1,
+    type: 'photo',
     title: `Take Photo`,
     image: ImageAssets.take_photo,
   },
   {
     id: 2,
+    type: 'file',
     title: `Upload Photo`,
     image: ImageAssets.upload_photo,
   },
