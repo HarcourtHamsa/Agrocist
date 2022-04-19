@@ -1,3 +1,16 @@
 rootProject.name = 'Agrocist'
+include ':tflite-react-native'
+project(':tflite-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/tflite-react-native/android')
+include ':tflite-react-native'
+project(':tflite-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/tflite-react-native/android')
+include ':react-native-fs'
+project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/android')
+include ':@react-native-async-storage_async-storage'
+project(':@react-native-async-storage_async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-async-storage/async-storage/android')
+include ':react-native-fs'
+project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/android')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
+
+apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle")
+useExpoModules()

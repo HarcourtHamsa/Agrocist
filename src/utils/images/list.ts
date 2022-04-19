@@ -41,3 +41,7 @@ export const store_lg = require('../../assets/images/store_lg.png');
 export const take_photo = require('../../assets/images/take_photo.png');
 export const upload_photo = require('../../assets/images/upload_photo.png');
 export const sample_display = require('../../assets/images/sample_display.png');
+
+// new code 
+export const close = require('../../assets/images/close.png');
+export const rose = require('../../assets/images/rose.png')

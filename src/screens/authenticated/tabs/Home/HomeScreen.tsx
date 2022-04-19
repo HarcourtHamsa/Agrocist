@@ -1,15 +1,15 @@
-import {IComponent} from 'interface/IComponent'
+import { IComponent } from 'interface/IComponent'
 import React from 'react'
-import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native'
-import {background} from 'styles/background'
-import {flex} from 'styles/layout'
-import {padding} from 'styles/spacing'
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { background } from 'styles/background'
+import { flex } from 'styles/layout'
+import { padding } from 'styles/spacing'
 import Calender from './sections/Calender'
 import RecentDiagnosis from './sections/RecentDiagnosis'
 import TopSection from './sections/TopSection'
 import Weather from './sections/Weather'
 
-const HomeScreen = ({navigation}: IComponent) => {
+const HomeScreen = ({ navigation }: IComponent) => {
   return (
     <SafeAreaView style={[flex.flex_1, padding.x_20, background.light_green]}>
       <ScrollView
@@ -18,7 +18,7 @@ const HomeScreen = ({navigation}: IComponent) => {
         <TopSection navigation={navigation} />
         <RecentDiagnosis />
         <Weather />
-        <Calender />
+        {/* <Calender /> */}
       </ScrollView>
     </SafeAreaView>
   )

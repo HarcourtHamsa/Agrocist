@@ -12,6 +12,12 @@ target 'Agrocist' do
     :hermes_enabled => false
   )
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
+  pod 'TfliteReactNative', :path => '../node_modules/tflite-react-native'
+
   target 'AgrocistTests' do
     inherit! :complete
     # Pods for testing

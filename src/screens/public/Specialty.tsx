@@ -106,7 +106,7 @@ const Specialty = ({navigation}: IComponent) => {
           <CustomButton
             title={`Keep Going`}
             containerStyle={[width.half]}
-            onPress={() => navigation.navigate('SPECIALTY_SCREEN')}
+            onPress={() => navigation.navigate('Tab')}
           />
         </View>
       </View>

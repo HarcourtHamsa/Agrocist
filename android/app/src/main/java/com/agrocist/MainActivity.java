@@ -1,5 +1,8 @@
 package com.agrocist;
 
+import expo.modules.ReactActivityDelegateWrapper;
+import com.facebook.react.ReactActivityDelegate;
+
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen;
@@ -19,5 +22,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "Agrocist";
+  }
+
+  @Override
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegateWrapper(this,
+      new ReactActivityDelegate(this, getMainComponentName())
+    );
   }
 }
